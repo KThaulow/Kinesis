@@ -1,4 +1,7 @@
-﻿using Amazon;
+﻿// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. 
+// SPDX-License-Identifier: Apache-2.0
+
+using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 
@@ -16,7 +19,7 @@ class Program
             // Get bucket metadata
             var response = await s3Client.GetBucketLocationAsync(new GetBucketLocationRequest{
                 BucketName = bucketName
-        });
+    });
 
             Console.WriteLine($"Bucket '{bucketName}' is located in: {response.Location}");
 
@@ -25,7 +28,7 @@ class Program
                 BucketName = bucketName
             });
 
-            foreach(var s3Object in objectResult.S3Objects)
+            foreach (var s3Object in objectResult.S3Objects)
             {
                 Console.WriteLine(s3Object.Key);
             }
