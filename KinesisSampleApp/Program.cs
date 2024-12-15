@@ -17,9 +17,10 @@ class Program
         try
         {
             // Get bucket metadata
-            var response = await s3Client.GetBucketLocationAsync(new GetBucketLocationRequest{
+            var response = await s3Client.GetBucketLocationAsync(new GetBucketLocationRequest
+            {
                 BucketName = bucketName
-    });
+            });
 
             Console.WriteLine($"Bucket '{bucketName}' is located in: {response.Location}");
 
