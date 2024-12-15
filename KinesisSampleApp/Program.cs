@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Amazon;
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 
@@ -16,10 +14,9 @@ class Program
         try
         {
             // Get bucket metadata
-            var response = await s3Client.GetBucketLocationAsync(new GetBucketLocationRequest
-            {
+            var response = await s3Client.GetBucketLocationAsync(new GetBucketLocationRequest{
                 BucketName = bucketName
-            });
+        });
 
             Console.WriteLine($"Bucket '{bucketName}' is located in: {response.Location}");
 
